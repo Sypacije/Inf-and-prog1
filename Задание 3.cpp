@@ -1,4 +1,5 @@
 ﻿#define _USE_MATH_DEFINES
+#include <stdio.h>
 #include <cmath>
 #include <iostream>
 #include <iomanip> //заголовок для определения манипулятора setprecision
