@@ -3,6 +3,7 @@
 #include <cmath>
 #include <iostream>
 #include <iomanip> //заголовок для определения манипулятора setprecision
+
 using namespace std;
 
 int main()
