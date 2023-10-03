@@ -1,47 +1,52 @@
 ﻿#define _USE_MATH_DEFINES
-#include <stdio.h>
 #include <cmath>
 #include <iostream>
-#include <iomanip> //заголовок для определения манипулятора setprecision
-
+#include <iomanip> 
 using namespace std;
+
+float f1(float y) {
+	return pow(y, 3) + 2 * (pow(y, 2)) - 3 * y - 7;
+}
+
+float f2(float y) {
+	return pow(sin(y), 2) + cos(y) - 7;
+}
+
+float f3(float y) {
+	return pow(M_E, y) + log(y);
+}
+
+float f4(float y) {
+	return sqrt(pow(y, 3)) + sin(pow(y, 2)) + pow(M_E, (-y));
+}
 
 int main()
 {
 	setlocale(LC_ALL, "Russian");
-	float x, y;
-	char w;
-	cout << "Введите значение x и букву, под которой находится нужная формула:\n a)f(x) = x^3 + 2x^2 - 3x -7; b)f(x) = sin^2(x) + cos(x) -7; c)f(x) = e^x + ln(x); d)f(x) = sqrt(x^3) + sin(x^2) + e^(-x)" << endl;
+	float x;
+	int w;
+	cout << "Введите значение аргумента и номер функции: " << endl;
 	cin >> x >> w;
-	if (w == 'a') {
-		y = pow(x, 3) + 2 * (pow(x, 2)) - 3 * x - 7;
-		cout << "f(" << x << ") = ";
-		cout << setprecision(4) << y << endl;
+	if (w == 1) {
+		cout << "f(" << x << ") = " << f1(x) << endl;
 	}
 
-	else if (w == 'b') {
-		y = pow(sin(x), 2) + cos(x) - 7;
-		cout << "f(" << x << ") = ";
-		cout << setprecision(4) << y << endl;
+	else if (w == 2) {
+		cout << "f(" << x << ") = " << f2(x) << endl;
+	}
+	
+	else if (w == 3) {
+		cout << "f(" << x << ") = " << f3(x) << endl;
 	}
 
-	else if (w == 'c') {
-		y = pow(M_E, x) + log(x);
-		cout << "f(" << x << ") = ";
-		cout << setprecision(4) << y << endl;
-	}
-
-	else if (w == 'd') {
-		y = sqrt(pow(x, 3)) + sin(pow(x, 2)) + pow(M_E, (-x));
-		cout << "f(" << x << ") = ";
-		cout << setprecision(4) << y << endl;
+	else if (w == 4) {
+		cout << "f(" << x << ") = " << f4(x) << endl;
 	}
 
 	else {
-		cout << "Неизвестная буква" << endl;
-		y = NULL;
+		cout << "Ошибка. Проверьте правильность введенных данных." << endl;
 	}
-
+	
 	system("pause");
 	return 0;
 }
